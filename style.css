@@ -1,171 +1,426 @@
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+@font-face {
+  font-family: "poppins";
+  src: url(asset/font/poppins-regular-webfont.woff) format("woff");
+}
+@font-face {
+  font-family: "poppins-medium";
+  src: url(asset/font/poppins-medium-webfont.woff) format("woff");
+}
+body {
+  background-image: url(asset/img/francesca-grima-ln_slYqaMiI-unsplash.jpg);
+  background-position: center;
+  background-attachment: fixed;
+}
+body,
+input,
+button {
+  font-family: "poppins";
 }
 
-body, input, button {
-    font-family: 'Open Sans', sans-serif;
-}
-
-input, button {
-    font-size: 16px;
+input,
+button {
+  font-size: 16px;
 }
 
 .head_bar {
-    padding: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: cornflowerblue;
-    color: white;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: cornflowerblue;
+  color: white;
+}
+
+.head_bar h1 {
+  animation: slideText 1s ease-in-out infinite alternate-reverse;
+  font-family: "poppins-medium";
 }
 
 main {
-    max-width: 800px;
-    width: 80%;
-    margin: 0 auto;
-    padding: 16px;
-
+  max-width: 800px;
+  width: 80%;
+  margin: 0 auto;
+  padding: 16px;
+  background-color: rgba(255, 255, 255, 0.886);
 }
 
 .input_section {
-    display: flex;
-    flex-direction: column;
-    padding: 16px;
-    border: 1px solid black;
-    border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  border: 1px solid black;
+  border-radius: 10px;
+  /* align-items: center; */
 }
 
 .input_section > h2 {
-    text-align: center;
-    color: cornflowerblue;
+  text-align: center;
+  color: cornflowerblue;
+  font-family: "poppins-medium";
+  height: 2rem;
+}
+
+.input_section > form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
 }
 
 .input_section > form > .input {
-    margin: 8px 0;
+  margin: 8px 0;
+  width: 100%;
 }
 
 .input_section > form > button {
-    background-color: cornflowerblue;
-    color: white;
-    border: 0;
-    border-radius: 5px;
-    display: block;
-    width: 100%;
-    padding: 8px;
-    cursor: pointer;
+  position: relative;
+  width: 80%;
+  height: 55px;
+  border-radius: 45px;
+  border: none;
+  background-color: rgb(151, 95, 255);
+  color: white;
+  box-shadow: 0px 10px 10px rgb(210, 187, 253) inset,
+    0px 5px 10px rgba(5, 5, 5, 0.212), 0px -10px 10px rgb(124, 54, 255) inset;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.Btn::before {
+  width: 70%;
+  height: 2px;
+  position: absolute;
+  background-color: rgba(250, 250, 250, 0.678);
+  content: "";
+  filter: blur(1px);
+  top: 7px;
+  border-radius: 50%;
+}
+
+.Btn::after {
+  width: 70%;
+  height: 2px;
+  position: absolute;
+  background-color: rgba(250, 250, 250, 0.137);
+  content: "";
+  filter: blur(1px);
+  bottom: 7px;
+  border-radius: 50%;
+}
+
+.Btn:hover {
+  animation: jello-horizontal 0.9s both;
+}
+
+@keyframes jello-horizontal {
+  0% {
+    transform: scale3d(1, 1, 1);
+  }
+
+  30% {
+    transform: scale3d(1.25, 0.75, 1);
+  }
+
+  40% {
+    transform: scale3d(0.75, 1.25, 1);
+  }
+
+  50% {
+    transform: scale3d(1.15, 0.85, 1);
+  }
+
+  65% {
+    transform: scale3d(0.95, 1.05, 1);
+  }
+
+  75% {
+    transform: scale3d(1.05, 0.95, 1);
+  }
+
+  100% {
+    transform: scale3d(1, 1, 1);
+  }
 }
 
 .input_section > form > button > span {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 .input_section > form > .input > input {
-    display: block;
-    width: 100%;
-    padding: 8px;
-    border-radius: 5px;
+  display: block;
+  width: 100%;
+  padding: 8px;
+  border-radius: 5px;
+  border: 2px solid rgb(21, 255, 0);
+  outline: none;
 }
 
+.input_section > form > .input > input:focus {
+  border: 2px solid rgb(209, 3, 255);
+  outline: none;
+}
 
 .input_section > form > .input > label {
-    color: cornflowerblue;
-    font-weight: bold;
+  color: cornflowerblue;
+  font-weight: bold;
 }
 
 .input_section > form > .input_inline {
-    margin: 12px 0;
-    display: flex;
-    align-items: center;
+  margin: 12px 0;
+  display: flex;
+  align-items: center;
+  display: flex;
+  gap: 1rem;
+  width: 100%;
 }
 
-.input_section > form > .input_inline > label {
-    color: cornflowerblue;
-    font-weight: bold;
-    margin-right: 10px;
+.input_section > form > .input_inline > label input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+input_section > form > .input_inline > label {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  font-size: 20px;
+  user-select: none;
+}
+
+.checkmark {
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 1.4em;
+  width: 1.4em;
+  border: 2px solid #2196f3;
+  border-radius: 1rem 0rem 1rem;
+  transform: rotate(45deg);
+  transition: all 0.5s ease-in-out;
+}
+
+input:checked ~ .checkmark {
+  box-shadow: 0px 0px 40px 5px #2196f3;
+  border-radius: 1rem 0rem 1rem;
+  background-color: #2195f31f;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.checkmark:after {
+  left: 0.35em;
+  top: 0.2em;
+  width: 0.25em;
+  height: 0.5em;
+  border: solid #2196f3;
+  border-width: 0 0.15em 0.15em 0;
+  transform: rotate(-5deg);
+  animation: upAnimate 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+@keyframes upAnimate {
+  from {
+    transform: translate(-20px, -20px) rotate(-5deg);
+    opacity: 0;
+  }
+
+  to {
+    transform: translate(0, 0) rotate(-5deg);
+    opacity: 1;
+  }
 }
 
 .search_section {
-    margin: 16px 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 16px;
-    border: 1px solid black;
-    border-radius: 10px;
+  margin: 16px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 16px;
+  border: 1px solid black;
+  border-radius: 10px;
 }
 
-.search_section > h2 {
-    color: cornflowerblue;
+.search_section > .h2 {
+  color: cornflowerblue;
 }
 
 .search_section > form {
-    padding: 16px;
-    width: 100%;
-    display: grid;
-    grid-template-columns: auto 1fr 0.5fr;
-    grid-gap: 10px;
+  padding: 16px;
+  width: 100%;
+  display: flex;
 }
 
 .search_section > form > label {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+  font-size: 1.2rem;
+  color: #ff0000;
 }
 
 .search_section > form > input {
-    padding: 5px;
-    border-radius: 5px;
+  padding: 5px;
+  border-radius: 5px;
+  width: 60%;
 }
 
-.search_section > form > button {
-    background-color: cornflowerblue;
-    color: white;
-    border: 0;
-    border-radius: 5px;
-    cursor: pointer;
+.search_section > form > .find-btn,
+a i {
+  background-color: cornflowerblue;
+  color: white;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  width: auto;
+  padding: 0.5rem;
+  margin: 0 1rem;
 }
 
 .book_shelf {
-    margin: 16px 0 0 0;
-    border: 1px solid black;
-    padding: 16px;
-    border-radius: 10px;
+  margin: 16px 0 0 0;
+  border: 1px solid black;
+  padding: 16px;
+  border-radius: 10px;
 }
 
 .book_shelf > h2 {
-    color: cornflowerblue;
+  color: cornflowerblue;
 }
 
 .book_shelf > .book_list {
-    padding: 16px;
+  padding: 16px;
+  background-image: url(asset/img/circle-scatter-haikei.svg);
+  background-attachment: fixed;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 .book_shelf > .book_list > .book_item {
-    padding: 8px 16px 16px 16px;
-    border: 1px solid black;
-    border-radius: 5px;
-    margin: 10px 0;
+  padding: 8px 16px 16px 16px;
+  border: 3px solid rgb(153, 91, 253);
+  /* border-radius: 5px; */
+  margin: 40px 0;
+  background-color: #ffffff83;
+  border-radius: 32px;
+  /* background: #ece4e4; */
+  box-shadow: 16px 16px 22px rgba(153, 91, 253, 0.295), -16px -16px 22px #ffffff;
 }
 
-.book_shelf > .book_list > .book_item > h3, p {
-    margin: 8px 0;
+.book_shelf > .book_list > .book_item > h3,
+.book_item p {
+  margin: 1rem 0;
+  color: #ff0000;
 }
 
-.book_shelf > .book_list > .book_item > .action > button {
-    border: 0;
-    padding: 5px;
-    margin: 0 5px 0 0;
-    border-radius: 5px;
-    cursor: pointer;
+.book_shelf > .book_list > .book_item p {
+  color: #000;
+}
+.action {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-top: 3rem;
 }
 
-.book_shelf > .book_list > .book_item > .action > .green {
-    background-color: darkgreen;
-    color: white;
+.green {
+  display: block;
+  font-family: helvetica;
+  color: #000;
+  font-size: 16px;
+  font-weight: bold;
+  box-shadow: 9px 8px 0px -1px#BEE2F9, 9px 8px 0px 1px #000;
+  padding: 5px 10px;
+  border-radius: 11px;
+  border: 2px solid #000;
+  background: linear-gradient(to top, #63b8ee, #468ccf);
+  transition: 0.3s;
+  cursor: pointer;
 }
 
-.book_shelf > .book_list > .book_item > .action > .red {
-    background-color: darkred;
-    color: white;
+.green:hover {
+  transition: 0.3s;
+  transform: translate(-0.3em, -0.3em);
+  box-shadow: 14px 13px 0px -1px #bee2f9, 14px 13px 0px 1px #000;
+  border: 2px solid #000;
+}
+
+.green:active {
+  transition: 0.3s;
+  transform: translate(0.6em, 0.6em);
+  box-shadow: 0px 0px 0px -1px #bee2f9, 0px 0px 0px 0.1px#000;
+}
+
+.red {
+  --b: 3px;
+  /* border thickness */
+  --s: 0.45em;
+  /* size of the corner */
+  --color: #b205f7;
+  font-weight: bold;
+  padding: calc(0.5em + var(--s)) calc(0.9em + var(--s));
+  color: var(--color);
+  --_p: var(--s);
+  background: conic-gradient(
+      from 90deg at var(--b) var(--b),
+      #0000 90deg,
+      var(--color) 0
+    )
+    var(--_p) var(--_p) / calc(100% - var(--b) - 2 * var(--_p))
+    calc(100% - var(--b) - 2 * var(--_p));
+  transition: 0.3s linear, color 0s, background-color 0s;
+  outline: var(--b) solid #0000;
+  outline-offset: 0.6em;
+  font-size: 16px;
+  border: 0;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.red:hover,
+.red:focus-visible {
+  --_p: 0px;
+  outline-color: #b205f7;
+  outline-offset: 0.05em;
+}
+
+.red:active {
+  background: #b205f7;
+  color: #000000;
+}
+
+@keyframes slideText {
+  0% {
+    color: rgb(255, 0, 0);
+  }
+  25% {
+    color: rgb(255, 0, 251);
+  }
+  50% {
+    color: rgb(30, 0, 255);
+  }
+  75% {
+    color: rgb(127, 255, 148);
+  }
+  100% {
+    color: rgb(255, 255, 240);
+  }
 }
