@@ -42,7 +42,7 @@
             </label>
           </div>
           <button id="bookSubmit" type="submit" class="Btn">
-            Masukkan Buku ke rak <span>&nbsp;Belum selesai dibaca</span>
+            Masukkan Buku ke rak
           </button>
         </form>
       </section>
@@ -50,8 +50,8 @@
       <section class="search_section">
         <h2 class="h2">Cari Buku</h2>
         <form id="searchBook">
-          <label for="searchBookTitle">Judul :</label>
-          <input id="searchBookTitle" type="text" />
+          <label for="searchBookTitle">Judul&nbsp;:</label>
+          <input id="searchBookTitle" type="text" placeholder="Cari Buku" />
           <button id="searchSubmit" class="find-btn" type="submit">
             <i class="fa-solid fa-magnifying-glass"></i>
           </button>
@@ -62,18 +62,7 @@
       <section class="book_shelf">
         <h2>Belum selesai dibaca</h2>
 
-        <div id="incompleteBookshelfList" class="book_list">
-          <!--      <article class="book_item">-->
-          <!--        <h3>Book Title</h3>-->
-          <!--        <p>Penulis: John Doe</p>-->
-          <!--        <p>Tahun: 2002</p>-->
-          <!--    -->
-          <!--        <div class="action">-->
-          <!--          <button class="green">Selesai dibaca</button>-->
-          <!--          <button class="red">Hapus buku</button>-->
-          <!--        </div>-->
-          <!--      </article>-->
-        </div>
+        <div id="incompleteBookshelfList" class="book_list"></div>
       </section>
 
       <section class="book_shelf">
@@ -82,6 +71,14 @@
         <div id="completeBookshelfList" class="book_list"></div>
       </section>
     </main>
+
+    <footer>
+      <h3>
+        Created by
+        <a href="https://github.com/Alphby48" target="_blank">Alphby48</a>. |
+        &copy; 2023.
+      </h3>
+    </footer>
 
     <script src="script.js"></script>
   </body>

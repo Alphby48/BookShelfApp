@@ -6,13 +6,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
   let arrBuku = [];
 
-  const periksaPenyimpanan = localStorage.getItem("BOOKSHELF_CLIENT_SIDE");
+  const periksaPenyimpanan = localStorage.getItem("BOOKSHELF_ADITYA");
   if (periksaPenyimpanan) {
     arrBuku = JSON.parse(periksaPenyimpanan);
   }
 
   function simpanBukuDiLocalStorage() {
-    localStorage.setItem("BOOKSHELF_CLIENT_SIDE", JSON.stringify(arrBuku));
+    localStorage.setItem("BOOKSHELF_ADITYA", JSON.stringify(arrBuku));
   }
 
   formInput.addEventListener("submit", function (e) {
